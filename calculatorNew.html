@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <style>
+        
+        .calculator {
+            
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #333;
+            background-color: #ffcc00;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            height: 50px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: right;
+            padding-right: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            outline: none;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            margin: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        .operator {
+            background-color: #ff9800;
+            color: #fff;
+        }
+        #zero {
+            width: 100px;
+        }
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    
+    <form name="form1" class="calci" action="calculator.html" method="POST">
+        <input type="text" name="answer" id="display" readonly>
+        <br><br>
+        <input type="button" value="C" onclick="form1.answer.value=''" class="button">
+        <input type="button" value="<" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)" class="button">
+        <input type="button" value="00" onclick="form1.answer.value+='00'" class="button">
+        <input type="button" value="/" onclick="form1.answer.value+='/'" class="button operator">
+        <br><br>
+        <input type="button" value="7" onclick="form1.answer.value+='7'" class="button">
+        <input type="button" value="8" onclick="form1.answer.value+='8'" class="button">
+        <input type="button" value="9" onclick="form1.answer.value+='9'" class="button">
+        <input type="button" value="*" onclick="form1.answer.value+='*'" class="button operator">
+        <br><br>
+        <input type="button" value="4" onclick="form1.answer.value+='4'" class="button">
+        <input type="button" value="5" onclick="form1.answer.value+='5'" class="button">
+        <input type="button" value="6" onclick="form1.answer.value+='6'" class="button">
+        <input type="button" value="-" onclick="form1.answer.value+='-'" class="button operator">
+        <br><br>
+        <input type="button" value="1" onclick="form1.answer.value+='1'" class="button">
+        <input type="button" value="2" onclick="form1.answer.value+='2'" class="button">
+        <input type="button" value="3" onclick="form1.answer.value+='3'" class="button">
+        <input type="button" value="+" onclick="form1.answer.value+='+'" class="button operator">
+        <br><br>
+        <input type="button" value="0" onclick="form1.answer.value+='0'" class="button" id="zero">
+        <input type="button" value="." onclick="form1.answer.value+='.'" class="button">
+        <input type="button" value="=" onclick="form1.answer.value=eval(form1.answer.value)" class="button operator">
+    </form>
+</div>
+
+</body>
+</html>
